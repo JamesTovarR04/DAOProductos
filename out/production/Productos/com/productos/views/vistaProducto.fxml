@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="360.0" prefWidth="300.0" style="-fx-background-color: #111;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.productos.controllers.views.VistaProductos">
+   <children>
+      <HBox fx:id="header" onMouseDragged="#moveDragged" onMousePressed="#movePreset" prefHeight="40.0" prefWidth="200.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #aaa;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Label fx:id="title" alignment="CENTER" prefHeight="39.0" prefWidth="250.0" text="Producto" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor>
+            </Label>
+            <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeWindow" prefHeight="51.0" prefWidth="30.0" style="-fx-background-color: none; -fx-background-image: url(&quot;file:D:/Programacion/JAVA/Productos/src/com/productos/views/images/closew.png&quot;); -fx-background-size: 90%; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+      <VBox layoutX="10.0" layoutY="35.0" prefHeight="306.0" prefWidth="280.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="280.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="106.0" text="Código:" textAlignment="RIGHT" textFill="#bfbfbf">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtCodigo" onKeyReleased="#validar" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: #eee;">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="280.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="106.0" text="Nombre:" textAlignment="RIGHT" textFill="#bfbfbf">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtNombre" onKeyPressed="#validar" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: #eee;">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="275.0" prefHeight="40.0" prefWidth="280.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="106.0" text="Fabricante:" textAlignment="RIGHT" textFill="#bfbfbf">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtFabricante" onKeyPressed="#validar" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: #eee;">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="90.0" prefHeight="46.0" prefWidth="280.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #999;">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="106.0" text="Cantidad:" textAlignment="RIGHT" textFill="#bfbfbf">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtCantidad" onKeyPressed="#validar" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: #eee;">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Label prefHeight="20.0" prefWidth="297.0" text="Descripción:" textFill="#bfbfbf">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="txtDescripcion" onKeyTyped="#validar" prefHeight="80.0" prefWidth="280.0" />
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="280.0">
+               <children>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarProducto" prefHeight="29.0" prefWidth="75.0" style="-fx-background-color: #c22424;" text="Eliminar" textFill="WHITE" visible="false">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnAgregar" disable="true" layoutX="113.0" layoutY="21.0" mnemonicParsing="false" onAction="#agregarProducto" prefHeight="29.0" prefWidth="75.0" style="-fx-background-color: #24c232;" text="Agregar" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnGuardar" layoutX="150.0" layoutY="21.0" mnemonicParsing="false" onAction="#guardarProducto" prefHeight="29.0" prefWidth="75.0" style="-fx-background-color: #246ec2;" text="Guardar" textFill="WHITE" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <padding>
+                  <Insets top="8.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

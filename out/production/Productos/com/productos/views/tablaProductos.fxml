@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="600.0" style="-fx-background-color: #111;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.productos.controllers.views.TablaProductos">
+   <children>
+      <HBox fx:id="header" onMouseDragged="#moveDragged" onMousePressed="#movePreset" prefHeight="40.0" prefWidth="200.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #666;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label prefHeight="40.0" text="Administrar Productos" textFill="WHITE">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <Glow level="0.75" />
+               </effect>
+            </Label>
+            <StackPane prefHeight="39.0" prefWidth="344.0">
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor></StackPane>
+            <Button mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: none; -fx-background-image: url(&quot;file:D:/Programacion/JAVA/Productos/src/com/productos/views/images/minw.png&quot;); -fx-background-size: 90%; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+               <HBox.margin>
+                  <Insets top="6.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#closeWindow" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: none; -fx-background-image: url(&quot;file:D:/Programacion/JAVA/Productos/src/com/productos/views/images/closew.png&quot;); -fx-background-size: 90%; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+               <HBox.margin>
+                  <Insets top="6.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="40.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <TextField fx:id="txtBuscar" onKeyReleased="#buscarProductos" prefHeight="20.0" prefWidth="210.0" promptText="Buscar">
+               <HBox.margin>
+                  <Insets top="6.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <StackPane prefHeight="40.0" prefWidth="252.0" />
+            <Button mnemonicParsing="false" onAction="#ventanaAgregar" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #36a011;" text="Agregar" textFill="WHITE">
+               <HBox.margin>
+                  <Insets top="7.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </HBox>
+      <ScrollPane layoutX="14.0" layoutY="116.0" prefWidth="580.0" style="-fx-background-color: none;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="578.0" style="-fx-background-color: none;">
+               <children>
+                  <TableView fx:id="tablaProductos" editable="true" layoutX="42.0" prefHeight="270.0" prefWidth="578.0" style="-fx-background-color: #111; -fx-border-width: 0;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="idColumna" prefWidth="37.0" text="Id" />
+                      <TableColumn fx:id="codigoColumna" prefWidth="84.0" text="Código" />
+                        <TableColumn fx:id="nombreColumna" prefWidth="122.0" text="Nombre" />
+                        <TableColumn fx:id="descripcionColumna" prefWidth="163.0" text="Descripción" />
+                        <TableColumn fx:id="fabricanteColumna" minWidth="9.0" prefWidth="99.0" text="Fabricante" />
+                        <TableColumn fx:id="cantidadColumna" prefWidth="72.0" text="Cnt." />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

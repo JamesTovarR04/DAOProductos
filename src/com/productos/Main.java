@@ -1,26 +1,33 @@
 package com.productos;
 
-import com.productos.utils.ConnectionDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-import java.sql.Connection;
-
+/**
+ * Programa CRUD de tabla productos en base de datos,
+ * se implementó el patrón MVC, DAO y singleton.
+ *
+ * Para las vistas se usó JavaFX
+ *
+ * @author JamesTovar
+ * @email u20172163883@usco.edu.co
+ */
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("views/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("views/tablaProductos.fxml"));
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setTitle("Productos");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 600, 360));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
-        //Connection cn = ConnectionDB.getConnection();
     }
 }
